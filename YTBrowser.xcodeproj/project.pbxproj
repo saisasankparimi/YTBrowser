@@ -1,0 +1,477 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		844A142019C2FADE00621210 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844A141F19C2FADE00621210 /* Foundation.framework */; };
+		844A142219C2FADE00621210 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844A142119C2FADE00621210 /* CoreGraphics.framework */; };
+		844A142419C2FADE00621210 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844A142319C2FADE00621210 /* UIKit.framework */; };
+		844A142A19C2FADE00621210 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 844A142819C2FADE00621210 /* InfoPlist.strings */; };
+		844A142C19C2FADE00621210 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A142B19C2FADE00621210 /* main.m */; };
+		844A143019C2FADE00621210 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A142F19C2FADE00621210 /* AppDelegate.m */; };
+		844A143319C2FADE00621210 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 844A143119C2FADE00621210 /* Main.storyboard */; };
+		844A143619C2FADE00621210 /* MasterViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A143519C2FADE00621210 /* MasterViewController.m */; };
+		844A143919C2FADE00621210 /* DetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A143819C2FADE00621210 /* DetailViewController.m */; };
+		844A143B19C2FADE00621210 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 844A143A19C2FADE00621210 /* Images.xcassets */; };
+		844A144219C2FADE00621210 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844A144119C2FADE00621210 /* XCTest.framework */; };
+		844A144319C2FADE00621210 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844A141F19C2FADE00621210 /* Foundation.framework */; };
+		844A144419C2FADE00621210 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 844A142319C2FADE00621210 /* UIKit.framework */; };
+		844A144C19C2FADE00621210 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 844A144A19C2FADE00621210 /* InfoPlist.strings */; };
+		844A144E19C2FADE00621210 /* YTBrowserTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 844A144D19C2FADE00621210 /* YTBrowserTests.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		844A144519C2FADE00621210 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 844A141419C2FADE00621210 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 844A141B19C2FADE00621210;
+			remoteInfo = YTBrowser;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		844A141C19C2FADE00621210 /* YTBrowser.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YTBrowser.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		844A141F19C2FADE00621210 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		844A142119C2FADE00621210 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		844A142319C2FADE00621210 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
+		844A142719C2FADE00621210 /* YTBrowser-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YTBrowser-Info.plist"; sourceTree = "<group>"; };
+		844A142919C2FADE00621210 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		844A142B19C2FADE00621210 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		844A142D19C2FADE00621210 /* YTBrowser-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "YTBrowser-Prefix.pch"; sourceTree = "<group>"; };
+		844A142E19C2FADE00621210 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		844A142F19C2FADE00621210 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		844A143219C2FADE00621210 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		844A143419C2FADE00621210 /* MasterViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = MasterViewController.h; sourceTree = "<group>"; };
+		844A143519C2FADE00621210 /* MasterViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = MasterViewController.m; sourceTree = "<group>"; };
+		844A143719C2FADE00621210 /* DetailViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DetailViewController.h; sourceTree = "<group>"; };
+		844A143819C2FADE00621210 /* DetailViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DetailViewController.m; sourceTree = "<group>"; };
+		844A143A19C2FADE00621210 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		844A144019C2FADE00621210 /* YTBrowserTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = YTBrowserTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		844A144119C2FADE00621210 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		844A144919C2FADE00621210 /* YTBrowserTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "YTBrowserTests-Info.plist"; sourceTree = "<group>"; };
+		844A144B19C2FADE00621210 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		844A144D19C2FADE00621210 /* YTBrowserTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = YTBrowserTests.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		844A141919C2FADE00621210 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844A142219C2FADE00621210 /* CoreGraphics.framework in Frameworks */,
+				844A142419C2FADE00621210 /* UIKit.framework in Frameworks */,
+				844A142019C2FADE00621210 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		844A143D19C2FADE00621210 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844A144219C2FADE00621210 /* XCTest.framework in Frameworks */,
+				844A144419C2FADE00621210 /* UIKit.framework in Frameworks */,
+				844A144319C2FADE00621210 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		844A141319C2FADE00621210 = {
+			isa = PBXGroup;
+			children = (
+				844A142519C2FADE00621210 /* YTBrowser */,
+				844A144719C2FADE00621210 /* YTBrowserTests */,
+				844A141E19C2FADE00621210 /* Frameworks */,
+				844A141D19C2FADE00621210 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		844A141D19C2FADE00621210 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				844A141C19C2FADE00621210 /* YTBrowser.app */,
+				844A144019C2FADE00621210 /* YTBrowserTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		844A141E19C2FADE00621210 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				844A141F19C2FADE00621210 /* Foundation.framework */,
+				844A142119C2FADE00621210 /* CoreGraphics.framework */,
+				844A142319C2FADE00621210 /* UIKit.framework */,
+				844A144119C2FADE00621210 /* XCTest.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		844A142519C2FADE00621210 /* YTBrowser */ = {
+			isa = PBXGroup;
+			children = (
+				844A142E19C2FADE00621210 /* AppDelegate.h */,
+				844A142F19C2FADE00621210 /* AppDelegate.m */,
+				844A143119C2FADE00621210 /* Main.storyboard */,
+				844A143419C2FADE00621210 /* MasterViewController.h */,
+				844A143519C2FADE00621210 /* MasterViewController.m */,
+				844A143719C2FADE00621210 /* DetailViewController.h */,
+				844A143819C2FADE00621210 /* DetailViewController.m */,
+				844A143A19C2FADE00621210 /* Images.xcassets */,
+				844A142619C2FADE00621210 /* Supporting Files */,
+			);
+			path = YTBrowser;
+			sourceTree = "<group>";
+		};
+		844A142619C2FADE00621210 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				844A142719C2FADE00621210 /* YTBrowser-Info.plist */,
+				844A142819C2FADE00621210 /* InfoPlist.strings */,
+				844A142B19C2FADE00621210 /* main.m */,
+				844A142D19C2FADE00621210 /* YTBrowser-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		844A144719C2FADE00621210 /* YTBrowserTests */ = {
+			isa = PBXGroup;
+			children = (
+				844A144D19C2FADE00621210 /* YTBrowserTests.m */,
+				844A144819C2FADE00621210 /* Supporting Files */,
+			);
+			path = YTBrowserTests;
+			sourceTree = "<group>";
+		};
+		844A144819C2FADE00621210 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				844A144919C2FADE00621210 /* YTBrowserTests-Info.plist */,
+				844A144A19C2FADE00621210 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		844A141B19C2FADE00621210 /* YTBrowser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 844A145119C2FADE00621210 /* Build configuration list for PBXNativeTarget "YTBrowser" */;
+			buildPhases = (
+				844A141819C2FADE00621210 /* Sources */,
+				844A141919C2FADE00621210 /* Frameworks */,
+				844A141A19C2FADE00621210 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = YTBrowser;
+			productName = YTBrowser;
+			productReference = 844A141C19C2FADE00621210 /* YTBrowser.app */;
+			productType = "com.apple.product-type.application";
+		};
+		844A143F19C2FADE00621210 /* YTBrowserTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 844A145419C2FADE00621210 /* Build configuration list for PBXNativeTarget "YTBrowserTests" */;
+			buildPhases = (
+				844A143C19C2FADE00621210 /* Sources */,
+				844A143D19C2FADE00621210 /* Frameworks */,
+				844A143E19C2FADE00621210 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				844A144619C2FADE00621210 /* PBXTargetDependency */,
+			);
+			name = YTBrowserTests;
+			productName = YTBrowserTests;
+			productReference = 844A144019C2FADE00621210 /* YTBrowserTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		844A141419C2FADE00621210 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "___FULLUSERNAME___";
+				TargetAttributes = {
+					844A143F19C2FADE00621210 = {
+						TestTargetID = 844A141B19C2FADE00621210;
+					};
+				};
+			};
+			buildConfigurationList = 844A141719C2FADE00621210 /* Build configuration list for PBXProject "YTBrowser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 844A141319C2FADE00621210;
+			productRefGroup = 844A141D19C2FADE00621210 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				844A141B19C2FADE00621210 /* YTBrowser */,
+				844A143F19C2FADE00621210 /* YTBrowserTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		844A141A19C2FADE00621210 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844A143B19C2FADE00621210 /* Images.xcassets in Resources */,
+				844A142A19C2FADE00621210 /* InfoPlist.strings in Resources */,
+				844A143319C2FADE00621210 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		844A143E19C2FADE00621210 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844A144C19C2FADE00621210 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		844A141819C2FADE00621210 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844A143019C2FADE00621210 /* AppDelegate.m in Sources */,
+				844A143619C2FADE00621210 /* MasterViewController.m in Sources */,
+				844A142C19C2FADE00621210 /* main.m in Sources */,
+				844A143919C2FADE00621210 /* DetailViewController.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		844A143C19C2FADE00621210 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				844A144E19C2FADE00621210 /* YTBrowserTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		844A144619C2FADE00621210 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 844A141B19C2FADE00621210 /* YTBrowser */;
+			targetProxy = 844A144519C2FADE00621210 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		844A142819C2FADE00621210 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				844A142919C2FADE00621210 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		844A143119C2FADE00621210 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				844A143219C2FADE00621210 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		844A144A19C2FADE00621210 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				844A144B19C2FADE00621210 /* en */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		844A144F19C2FADE00621210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		844A145019C2FADE00621210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		844A145219C2FADE00621210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YTBrowser/YTBrowser-Prefix.pch";
+				INFOPLIST_FILE = "YTBrowser/YTBrowser-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Debug;
+		};
+		844A145319C2FADE00621210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YTBrowser/YTBrowser-Prefix.pch";
+				INFOPLIST_FILE = "YTBrowser/YTBrowser-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				WRAPPER_EXTENSION = app;
+			};
+			name = Release;
+		};
+		844A145519C2FADE00621210 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YTBrowser.app/YTBrowser";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YTBrowser/YTBrowser-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				INFOPLIST_FILE = "YTBrowserTests/YTBrowserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		844A145619C2FADE00621210 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/YTBrowser.app/YTBrowser";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "YTBrowser/YTBrowser-Prefix.pch";
+				INFOPLIST_FILE = "YTBrowserTests/YTBrowserTests-Info.plist";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUNDLE_LOADER)";
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		844A141719C2FADE00621210 /* Build configuration list for PBXProject "YTBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				844A144F19C2FADE00621210 /* Debug */,
+				844A145019C2FADE00621210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		844A145119C2FADE00621210 /* Build configuration list for PBXNativeTarget "YTBrowser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				844A145219C2FADE00621210 /* Debug */,
+				844A145319C2FADE00621210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		844A145419C2FADE00621210 /* Build configuration list for PBXNativeTarget "YTBrowserTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				844A145519C2FADE00621210 /* Debug */,
+				844A145619C2FADE00621210 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 844A141419C2FADE00621210 /* Project object */;
+}
