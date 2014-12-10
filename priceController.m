@@ -7,43 +7,52 @@
 //
 
 #import "priceController.h"
+#import "planModel.h"
+#import "TableCell.h"
 
-@interface priceController ()
-
-@end
-
-@implementation priceController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+@implementation priceController{
+    planModel *plan;
 }
+
+@synthesize backgroundImage=_backgroundImage;
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    UIImage *image= [UIImage imageNamed:@"wallpaper.png"];
+    _backgroundImage.image=image;
+    
+       plan=[[planModel alloc]init];
+    
 }
 
-- (void)didReceiveMemoryWarning
+
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+
+    
+    return [[plan planName] count];
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
+    static NSString *simpleTableIdentifier = @"priceIdentifier";
+
+    
+   TableCell *cell = (TableCell *)[tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    
+    
+    cell.planLabel.text = [[plan planName] objectAtIndex:indexPath.row];
+    cell.planDescriptionLabel.text=[[plan planDescription] objectAtIndex:indexPath.row];
+    cell.planKESLabel.text=[[plan planKES] objectAtIndex:indexPath.row];
+    return cell;
 }
-*/
+
 
 @end

@@ -8,6 +8,13 @@
 
 #import "JSONModel.h"
 
-@interface MediaThumbnail : JSONModel
+@protocol MediaThumbnail @end
+
+@interface MediaThumbnail : JSONModel<NSCoding>
+
+@property (strong, nonatomic) NSURL* url;
+@property (assign, nonatomic) int width;
+@property (assign, nonatomic) int height;
+@property (strong, nonatomic) NSString* time;
 
 @end

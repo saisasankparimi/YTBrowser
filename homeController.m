@@ -8,42 +8,48 @@
 
 #import "homeController.h"
 
-@interface homeController ()
 
-@end
 
 @implementation homeController
 
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
-}
+@synthesize tabImage1=_tabImage1;
+@synthesize tabImage2=_tabImage2;
+
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    _tabImage1.image=[UIImage imageNamed:@"red.png"];
+    
+
 }
 
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+
+- (IBAction)exploreButton:(id)sender {
+    
+    
+    UIImage *image = [UIImage imageNamed:@"red.png"];
+    
+    _tabImage1.image=image;
+    _tabImage2.image=NULL;
+    
 }
 
-/*
-#pragma mark - Navigation
+- (IBAction)myVideosButton:(id)sender {
+    UIImage *image = [UIImage imageNamed:@"red.png"];
+    
+  _tabImage1.image=NULL;
+    
+    _tabImage2.image=image;
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    
 }
-*/
+
+
+
+
+
+
 
 @end

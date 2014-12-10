@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-
-@interface languageController : UIViewController
-
+#import "TableCell.h"
+@interface languageController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UIImageView *languageImage;
 @end

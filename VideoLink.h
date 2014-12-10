@@ -8,6 +8,10 @@
 
 #import "JSONModel.h"
 
-@interface VideoLink : JSONModel
+@protocol VideoLink @end
+
+@interface VideoLink : JSONModel<NSCoding>
+
+@property (strong, nonatomic) NSURL* href;
 
 @end

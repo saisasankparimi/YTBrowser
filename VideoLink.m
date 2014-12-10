@@ -10,4 +10,28 @@
 
 @implementation VideoLink
 
+
+- (id)initWithCoder:(NSCoder *)decoder {
+    self = [super init];
+    if (!self) {
+        return nil;
+    }
+    
+   
+    self.href = [decoder decodeObjectForKey:@"href"];
+  
+    
+    
+    return self;
+}
+
+- (void)encodeWithCoder:(NSCoder *)encoder {
+       [encoder encodeObject:self.href forKey:@"href"];
+  }
+
+
+
+
+
+
 @end

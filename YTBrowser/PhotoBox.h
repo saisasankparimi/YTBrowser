@@ -10,4 +10,8 @@
 
 @interface PhotoBox : MGBox
 
++(PhotoBox *)photoBoxForURL:(NSURL*)url title:(NSString*)title;
+
+@property (strong, nonatomic) NSString* titleString;
+
 @end

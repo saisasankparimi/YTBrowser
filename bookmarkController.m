@@ -7,113 +7,89 @@
 //
 
 #import "bookmarkController.h"
-
-@interface bookmarkController ()
-
-@end
-
+#import "bookmarkModel.h"
+#import "TableCell.h"
+#import "VideoModel.h"
+#import "WebVideoViewController.h"
+#import "VideoLink.h"
 @implementation bookmarkController
+@synthesize bookmarkTableView=_bookmarkTableView;
 
-- (id)initWithStyle:(UITableViewStyle)style
-{
-    self = [super initWithStyle:style];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+NSInteger i;
+
+
+-(void) viewDidLoad{
+
+      [self.bookmarkTableView reloadData];
+    i=0;
+
 }
 
-- (void)viewDidLoad
+-(NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    [super viewDidLoad];
+   bookmarkModel *obj = [bookmarkModel sharedManager];
+  //return [object numberOfObjects];
+  //  NSLog(@"%lu , hello",(unsigned long)[obj numberOfObjects]);
+
+    return  [obj numberOfObjects];
+    NSLog(@"%ld",(long)[obj numberOfObjects]);
+  }
+
+-(UITableViewCell*)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+   
+   bookmarkModel *obj = [bookmarkModel sharedManager];
+ 
+    TableCell *cell = (TableCell *)[tableView dequeueReusableCellWithIdentifier:@"bookmarkListIdentifier" forIndexPath:indexPath];
+    VideoModel *model = [obj objectAtIndex:indexPath.row];
+    cell.bookmarkControllerVideoName.text = model.title;
     
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
     
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
-}
-
-- (void)didReceiveMemoryWarning
-{
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
-}
-
-#pragma mark - Table view data source
-
-- (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView
-{
-#warning Potentially incomplete method implementation.
-    // Return the number of sections.
-    return 0;
-}
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-#warning Incomplete method implementation.
-    // Return the number of rows in the section.
-    return 0;
-}
-
-/*
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:<#@"reuseIdentifier"#> forIndexPath:indexPath];
+    NSURL *url =[obj returnUrl:indexPath.row];
     
-    // Configure the cell...
+    
+cell.BookmarkControllerImage.image = [self loadPhotoFromURL:url];
     
     return cell;
 }
-*/
 
-/*
-// Override to support conditional editing of the table view.
-- (BOOL)tableView:(UITableView *)tableView canEditRowAtIndexPath:(NSIndexPath *)indexPath
+- (id)loadPhotoFromURL:(NSURL*)url
 {
-    // Return NO if you do not want the specified item to be editable.
-    return YES;
+    
+    // fetch the remote photo
+    NSData *data = [NSData dataWithContentsOfURL:url];
+        
+    
+    // got the photo, so lets show it
+    UIImage *image = [UIImage imageWithData:data];
+    
+    return image;
 }
-*/
 
-/*
-// Override to support editing the table view.
-- (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    if (editingStyle == UITableViewCellEditingStyleDelete) {
-        // Delete the row from the data source
-        [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-    } else if (editingStyle == UITableViewCellEditingStyleInsert) {
-        // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
-    }   
+
+-(void) prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender{
+
+    bookmarkModel *obj = [bookmarkModel sharedManager];
+    
+    if ([segue.identifier isEqualToString:@"videoViewSegue"]) {
+        NSIndexPath *indexPath = [self.bookmarkTableView indexPathForSelectedRow];
+        WebVideoViewController* controller = segue.destinationViewController;
+        VideoModel *model = [obj.bookmark objectAtIndex:indexPath.row];
+       
+        VideoLink* link = [VideoLink alloc];
+        link.href = [NSURL URLWithString:obj->urlStrings[indexPath.row]];
+        model.link =(NSMutableArray<VideoLink> *) [[NSMutableArray alloc] init];
+        [model.link addObject:link];
+        controller.video = model;
+        
+        NSLog(@" %lu",(unsigned long)indexPath.row);
+        
+    }
+    
+
+
 }
-*/
 
-/*
-// Override to support rearranging the table view.
-- (void)tableView:(UITableView *)tableView moveRowAtIndexPath:(NSIndexPath *)fromIndexPath toIndexPath:(NSIndexPath *)toIndexPath
-{
-}
-*/
 
-/*
-// Override to support conditional rearranging of the table view.
-- (BOOL)tableView:(UITableView *)tableView canMoveRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    // Return NO if you do not want the item to be re-orderable.
-    return YES;
-}
-*/
-
-/*
-#pragma mark - Navigation
-
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
-{
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
 
 @end

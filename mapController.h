@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MapKit/MapKit.h>
+#import <CoreLocation/CoreLocation.h>
+@interface mapController : UIViewController<MKMapViewDelegate,CLLocationManagerDelegate>
+@property (weak, nonatomic) IBOutlet MKMapView *mapView;
+- (IBAction)getLocation:(id)sender;
+@property (nonatomic, weak) NSString *address;
 
-@interface mapController : UIViewController
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *addressButton;
+
 
 @end

@@ -7,28 +7,28 @@
 //
 
 #import "TableCell.h"
-
+#import "VideoModel.h"
 @implementation TableCell
 
-- (id)initWithStyle:(UITableViewCellStyle)style reuseIdentifier:(NSString *)reuseIdentifier
-{
-    self = [super initWithStyle:style reuseIdentifier:reuseIdentifier];
-    if (self) {
-        // Initialization code
-    }
-    return self;
+@synthesize languageLabel=_languageLabel;
+@synthesize languageSwitch=_languageSwitch;
+@synthesize planDescriptionLabel=_planDescriptionLabel ;
+@synthesize planLabel=_planLabel;
+@synthesize planKESLabel=_planKESLabel;
+@synthesize thumbnailImage=_thumbnailImage;
+@synthesize videoName=_videoName;
+
+@synthesize BookmarkControllerImage=_BookmarkControllerImage;
+- (IBAction)favBtnClicked:(id)sender {
+//    NSDictionary *userInfo = @{@"rowSelected":[NSNumber numberWithInteger:_rowSelected]};
+//    
+//    [[NSNotificationCenter defaultCenter] postNotificationName:@"FavBtnClicked" object:self userInfo:userInfo];
+    
+  
+    
+    
+    
 }
 
-- (void)awakeFromNib
-{
-    // Initialization code
-}
-
-- (void)setSelected:(BOOL)selected animated:(BOOL)animated
-{
-    [super setSelected:selected animated:animated];
-
-    // Configure the view for the selected state
-}
-
+@synthesize bookmarkControllerVideoName=_bookmarkControllerVideoName;
 @end

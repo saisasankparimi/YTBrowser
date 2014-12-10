@@ -8,6 +8,16 @@
 
 #import <Foundation/Foundation.h>
 
-@interface userInfoModel : NSObject
+@interface userInfoModel : NSObject{
+ NSDictionary *userDictionary;
+}
 
+
+
+@property (strong, nonatomic) NSMutableDictionary *userDictionary;
+
++ (id)sharedManager;
+
+-(void)addUserInfo:(NSArray *)array;
+-(NSString *) getData:(NSString *)strings;
 @end

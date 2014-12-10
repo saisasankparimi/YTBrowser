@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface bookmarkController : UITableViewController
-
+@interface bookmarkController : UIViewController<UITableViewDataSource, UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *bookmarkTableView;
+@property (weak, nonatomic) NSMutableArray* eleArray;
+- (id)loadPhotoFromURL:(NSURL*)url;
 @end

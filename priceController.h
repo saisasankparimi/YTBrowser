@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface priceController : UIViewController
+@interface priceController : UIViewController<UITableViewDelegate, UITableViewDataSource>
+@property (weak, nonatomic) IBOutlet UIImageView *backgroundImage;
 
 @end

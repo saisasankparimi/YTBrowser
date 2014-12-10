@@ -10,4 +10,10 @@
 
 @interface planModel : NSObject
 
+-(id) planName;
+
+-(id) planDescription;
+ 
+-(id) planKES;
+
 @end

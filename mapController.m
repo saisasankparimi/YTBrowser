@@ -7,43 +7,129 @@
 //
 
 #import "mapController.h"
+#import "HUD.h"
 
-@interface mapController ()
-
-@end
-
-@implementation mapController
-
-- (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
-{
-    self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
-    if (self) {
-        // Custom initialization
-    }
-    return self;
+@implementation mapController{
+    CLLocationManager *locationManager;
+    CLGeocoder *geocoder;
+    CLPlacemark *placemark;
+    NSString  *addressString;
 }
+
+
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
-}
+    //delegating the mapView
+     //self.mapView.delegate = self;
+    
+    locationManager = [[CLLocationManager alloc] init];
+    geocoder = [[CLGeocoder alloc] init];
 
-- (void)didReceiveMemoryWarning
+    [self get];
+    self.mapView.delegate = self;
+    [self.mapView setShowsUserLocation:YES];
+   
+    [_addressButton setEnabled:NO];
+}
+- (void)viewDidUnload {
+    [super viewDidUnload];
+    [_mapView setShowsUserLocation:NO];
+}
+-(void)viewDidAppear:(BOOL)animated{
+    
+    [super viewDidAppear:YES];
+ self.mapView.delegate = self;
+    [self.mapView setShowsUserLocation:YES];
+    
+       }
+
+- (void)mapView:(MKMapView *)mapView didUpdateUserLocation:(MKUserLocation *)userLocation
 {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+    MKCoordinateRegion region = MKCoordinateRegionMakeWithDistance(userLocation.coordinate, 800, 800);
+    [self.mapView setRegion:[self.mapView regionThatFits:region] animated:YES];
+    
+    MKPointAnnotation *point = [[MKPointAnnotation alloc] init];
+    point.coordinate = userLocation.coordinate;
+    point.title = @"Where am I?";
+    point.subtitle = @"Click Address";
+    
+    [self.mapView addAnnotation:point];
+    
+    
+    
+    
 }
 
-/*
-#pragma mark - Navigation
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+-(IBAction)get{
+
+    
+    locationManager.delegate = self;
+    locationManager.desiredAccuracy = kCLLocationAccuracyBest;
+    
+    [locationManager startUpdatingLocation];
+    
+    
+        
+        
+        
+
+
+
+}
+
+- (IBAction)getLocation:(id)sender {
+    [self get];
+    
+    if(addressString){
+        [[[UIAlertView alloc] initWithTitle:@"Address"
+                                    message:addressString
+                                   delegate:nil
+                          cancelButtonTitle:@"Close"
+                          otherButtonTitles: nil] show];
+    }
+ 
+}
+
+
+- (void)locationManager:(CLLocationManager *)manager didFailWithError:(NSError *)error
 {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
+    NSLog(@"didFailWithError: %@", error);
+    UIAlertView *errorAlert = [[UIAlertView alloc]
+                               initWithTitle:@"Error" message:@"Failed to Get Your Location" delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+    [errorAlert show];
 }
-*/
+
+- (void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation
+{
+    NSLog(@"didUpdateToLocation: %@", newLocation);
+    CLLocation *currentLocation = newLocation;
+    
+    
+    
+    [locationManager stopUpdatingLocation];
+    // Reverse Geocoding
+    NSLog(@"Resolving the Address");
+   
+    [geocoder reverseGeocodeLocation:currentLocation completionHandler:^(NSArray *placemarks, NSError *error) {
+        NSLog(@"Found placemarks: %@, error: %@", placemarks, error);
+        if (error == nil && [placemarks count] > 0) {
+            placemark = [placemarks lastObject];
+            addressString = [NSString stringWithFormat:@" %@\n%@ %@\n%@\n%@",
+                                   placemark.thoroughfare,
+                                  placemark.postalCode, placemark.locality,
+                                  placemark.administrativeArea,
+                                  placemark.country];
+            [_addressButton setEnabled:YES];
+                   } else {
+            NSLog(@"%@", error.debugDescription);
+           
+        }
+    } ];
+    
+}
+
 
 @end

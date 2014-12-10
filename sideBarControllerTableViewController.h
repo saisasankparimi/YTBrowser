@@ -10,4 +10,6 @@
 
 @interface sideBarControllerTableViewController : UITableViewController
 
+@property (weak, nonatomic) IBOutlet UITableView *table;
+
 @end

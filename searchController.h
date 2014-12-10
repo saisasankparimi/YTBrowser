@@ -9,5 +9,16 @@
 #import <UIKit/UIKit.h>
 
 @interface searchController : UIViewController
+{
+    NSMutableArray* images;
+     NSCache *_imageCache;
+}
 
+@property (weak, nonatomic) IBOutlet UISearchBar *searchBar;
+@property (weak, nonatomic) IBOutlet UITableView *theTable;
+
+@property (nonatomic, strong) NSOperationQueue *queue;
+@property (weak, nonatomic) IBOutlet UIBarButtonItem *sideBar;
+
+-(void)yourButtonClicked:(UIButton*)sender;
 @end

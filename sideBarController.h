@@ -8,6 +8,8 @@
 
 #import <UIKit/UIKit.h>
 
-@interface sideBarController : UIViewController
-
+@interface sideBarController : UIViewController<UITableViewDataSource,UITableViewDelegate>
+@property (weak, nonatomic) IBOutlet UITableView *bottomTable;
+@property (weak, nonatomic) IBOutlet UITableView *userTable;
+- (UIImage*)loadImage;
 @end
